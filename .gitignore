@@ -1,0 +1,15 @@
+# Ignore specific Python scripts
+fb_post.py
+scrape.sh
+update_db.py
+update_phones_db.py
+
+# Ignore the virtual environment directory
+/env/
+
+# Ignore all __pycache__ directories and .pyc files
+__pycache__/
+*.pyc
+amazon/__pycache__/
+*.db
+amazon/*.db

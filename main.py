@@ -6,24 +6,15 @@ from selenium.webdriver.common.keys import Keys
 import time
 import pdb  
 from amazon.amazon import Amazon
+from amazon.alert import Alert
 
 with Amazon() as bot:
     bot.land_page()
     cookie_banner_removed = bot.remove_cookie_banner()
-    # bot.select_category(category="Angebote")
     bot.input_search(search="laptop")
     if cookie_banner_removed == False:
         cookie_banner_removed = bot.remove_cookie_banner()
-    bot.get_results()
-    if cookie_banner_removed == False:
-        cookie_banner_removed = bot.remove_cookie_banner()
-    bot.next_page()
-    bot.get_results()
-    bot.next_page()
-    bot.get_results()
-    bot.next_page()
-    bot.get_results()
-    # pdb.set_trace()
+    bot.get_general_results(get_brand=True, search_term="laptop")
     print("Done!")
     time.sleep(3)
     print("Exiting...")
